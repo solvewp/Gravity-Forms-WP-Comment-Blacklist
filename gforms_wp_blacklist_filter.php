@@ -10,6 +10,7 @@ function custom_validation( $validation_result ) {
 	}
 	//Turn WP Blacklist Words into Array
 	$badWords = preg_split("/[\s,]+/", $blacklisted);
+	    
 	//Function to Check Submitted Field Value Against Blacklist Array. Will be Called in the Fields Loop.
 	function contains($field_value, array $badWords){
 		foreach($badWords as $i) {
@@ -28,7 +29,7 @@ function custom_validation( $validation_result ) {
 				// set the form validation to false
 				$validation_result['is_valid'] = false;
                 $field->failed_validation = true;
-                $field->validation_message = 'This field contains bad words!';
+                $field->validation_message = 'We are not accepting spam message here, go away!';
                 break;
 			}
 			else {
