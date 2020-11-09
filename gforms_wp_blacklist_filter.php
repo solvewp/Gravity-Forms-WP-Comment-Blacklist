@@ -1,4 +1,4 @@
-/*Gravity Forms Filter to Use WP 'Comment Blacklist' as Validation Parameter*/
+// Gravity Forms Filter to Use WP 'Comment Blacklist' as Validation Parameter
 add_filter( 'gform_validation', 'custom_validation' );
 function custom_validation( $validation_result ) {
     if ( false === get_option( 'disallowed_keys' ) ) {
